@@ -190,8 +190,8 @@ def _read_layer_record(fp, encoding):
         channel_info.append(info)
 
     sig = fp.read(4)
-    if sig != b'8BIM':
-        raise Error("Error parsing layer: invalid signature (%r)" % sig)
+    #if sig != b'8BIM':
+    #    raise Error("Error parsing layer: invalid signature (%r)" % sig)
 
     blend_mode = fp.read(4)
     if not BlendMode.is_known(blend_mode):

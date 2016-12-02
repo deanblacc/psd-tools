@@ -73,8 +73,8 @@ def decode(effects):
     effects_list = []
     for idx in range(effects_count):
         sig = fp.read(4)
-        #if sig != b'8BIM':
-        #    raise Error("Error parsing layer effect: invalid signature (%r)" % sig)
+        if sig != b'8BIM':
+            raise Error("Error parsing layer effect: invalid signature (%r)" % sig)
 
         effect_type = fp.read(4)
         if not EffectOSType.is_known(effect_type):
